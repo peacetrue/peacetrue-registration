@@ -26,6 +26,8 @@ public class RegistrationController {
     @PostMapping(consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public Mono<RegistrationVO> addByForm(RegistrationAdd params) {
         log.info("新增报名申请信息(请求方法+表单参数)[{}]", params);
+        //此接口无需认证和身份验证，手动设置一个默认操作者
+        params.setOperatorId(1L);
         return registrationService.add(params);
     }
 
