@@ -1,0 +1,12 @@
+{
+  "name": "peacetrue-registration",
+  "version": "0.1.0",
+  "description": "报名申请",
+  "files": [
+    "src/modules"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peacetrue/peacetrue-registration.git"
+  }
+}

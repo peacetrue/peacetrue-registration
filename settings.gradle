@@ -1,0 +1,6 @@
+rootProject.name = "peacetrue-registration"
+include("peacetrue-registration-service-api")
+include("peacetrue-registration-service-impl")
+include("peacetrue-registration-controller")
+include("peacetrue-registration-app")
+include("peacetrue-registration-client")
