@@ -62,6 +62,7 @@ public class RegistrationServiceImpl implements RegistrationService {
     @Transactional
     public Mono<RegistrationVO> add(RegistrationAdd params) {
         log.info("新增报名申请信息[{}]", params);
+        if (params.getTypeId() == null) params.setTypeId(0L);
         if (params.getAge() == null) params.setAge(0);
         if (params.getEmail() == null) params.setEmail("");
         if (params.getRemark() == null) params.setRemark("");

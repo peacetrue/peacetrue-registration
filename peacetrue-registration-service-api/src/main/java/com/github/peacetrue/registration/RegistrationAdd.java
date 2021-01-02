@@ -22,7 +22,6 @@ public class RegistrationAdd extends OperatorCapableImpl<Long> {
     private static final long serialVersionUID = 0L;
 
     /** 报名类型 */
-    @NotNull
     private Long typeId;
     /** 姓名 */
     @NotNull
