@@ -23,6 +23,8 @@ public class RegistrationAdd extends OperatorCapableImpl<Long> {
 
     /** 报名类型 */
     private Long typeId;
+    /** 班级 */
+    private Long classGradeId;
     /** 姓名 */
     @NotNull
     @Size(min = 1, max = 32)

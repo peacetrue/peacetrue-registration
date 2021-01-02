@@ -26,7 +26,6 @@ public class RegistrationModify extends OperatorCapableImpl<Long> implements IdC
     @NotNull
     private Long id;
     /** 姓名 */
-    @NotNull
     @Size(min = 1, max = 32)
     private String name;
     /** 年龄 */
@@ -34,12 +33,12 @@ public class RegistrationModify extends OperatorCapableImpl<Long> implements IdC
     @Max(500)
     private Integer age;
     /** 手机 */
-    @NotNull
     @Size(min = 1, max = 32)
     private String mobile;
     /** 报名类型 */
-    @NotNull
     private Long typeId;
+    /** 班级 */
+    private Long classGradeId;
     /** 电子邮箱 */
     @Size(min = 1, max = 32)
     private String email;

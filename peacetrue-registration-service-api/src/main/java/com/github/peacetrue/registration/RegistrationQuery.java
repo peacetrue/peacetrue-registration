@@ -29,6 +29,8 @@ public class RegistrationQuery extends OperatorCapableImpl<Long> {
     private String mobile;
     /** 报名类型 */
     private Long typeId;
+    /** 班级 */
+    private Long classGradeId;
     /** 电子邮箱 */
     private String email;
     /** 备注 */

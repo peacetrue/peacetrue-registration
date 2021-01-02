@@ -46,6 +46,7 @@ public class RegistrationServiceImpl implements RegistrationService {
         return CriteriaUtils.and(
                 CriteriaUtils.nullableCriteria(CriteriaUtils.smartIn("id"), params::getId),
                 CriteriaUtils.nullableCriteria(Criteria.where("typeId")::is, params::getTypeId),
+                CriteriaUtils.nullableCriteria(Criteria.where("classGradeId")::is, params::getClassGradeId),
                 CriteriaUtils.nullableCriteria(Criteria.where("name")::like, value -> "%" + value + "%", params::getName),
                 CriteriaUtils.nullableCriteria(Criteria.where("mobile")::like, value -> "%" + value + "%", params::getMobile),
                 CriteriaUtils.nullableCriteria(Criteria.where("email")::like, value -> "%" + value + "%", params::getEmail),
@@ -62,10 +63,7 @@ public class RegistrationServiceImpl implements RegistrationService {
     @Transactional
     public Mono<RegistrationVO> add(RegistrationAdd params) {
         log.info("新增报名申请信息[{}]", params);
-        if (params.getTypeId() == null) params.setTypeId(0L);
-        if (params.getAge() == null) params.setAge(0);
-        if (params.getEmail() == null) params.setEmail("");
-        if (params.getRemark() == null) params.setRemark("");
+        BeanUtils.setDefaultValue(params);
         Registration entity = BeanUtils.map(params, Registration.class);
         entity.setCreatorId(params.getOperatorId());
         entity.setCreatedTime(LocalDateTime.now());
